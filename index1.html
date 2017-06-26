@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script> <!--библиотека реакт>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script> <!--библиотека реакт dom>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+</head>
+    <body>
+        <script type="text/babel">
+
+            var HelloWorld = React.createClass({
+                render: function () {    //рендер - функция  - то, что должно отобразиться на нашей странице
+                    return <h1>My name is
+                        {this.props.name} and I love
+                        {this.props.action}</h1>; //jsx - xml-подобный синтаксис;  2)все что в скобках - параметры, либо возвращ. значение какой-то функции
+                }
+            });
+
+            ReactDOM.render( //отображение нашего компонента
+                    <div>
+                        <HelloWorld name="Vasya" action="drinking"/>
+                        <HelloWorld name="Marina" action="watching"/>
+                        <HelloWorld name="Vova" action="sleeping"/>
+                        <HelloWorld name="Ivan" action="eating"/>
+                    </div>, // нужно всегда все оборачивать в 1 элемент, чтобы реакту было проще разобраться что ему и куда нужно рендерить
+
+                document.getElementById('content')
+            );
+        </script>
+    </body>
+</html>
